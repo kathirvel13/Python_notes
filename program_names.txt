@@ -1,0 +1,10 @@
+Dear Students,
+Prepare the following programs:
+1. Area of Shapes
+2. ATM Operations
+3. Removing lines containing 'a'
+4. Searching in a Binary File
+5. CSV File
+6. Linear Search 
+7. Binary Search
+8. Stack Operations
