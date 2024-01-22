@@ -1,0 +1,72 @@
+SHOW DATABASES;
+
+CREATE DATABASE class12;
+
+USE class12;
+
+SHOW TABLES;
+
+SYSTEM CLS
+
+CREATE TABLE student
+(rno INT PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+class CHAR(3) DEFAULT("XII"),
+section CHAR(1),
+age INT);
+
+DESC student;
+DESCRIBE student;
+
+INSERT INTO student VALUES
+(01, "Aravind", "XII", 'A', 17),
+(02, "Bhuvan", 'XII', 'B', 16);
+
+SELECT * FROM student;
+
+ALTER TABLE student ADD DOB DATE;
+
+INSERT INTO student (rno, name, age, section, DOB) VALUES
+(3, "David", 17, 'C', 20061025);
+
+UPDATE student SET dob = 20060217 WHERE rno = 1;
+
+
+
+
+
+
+INSERT INTO marks (roll_no, cs) VALUES 
+(1,24), (2,55), (3,29);
+
+SELECT * FROM Student CROSS JOIN marks;
+
+SELECT * FROM Student S CROSS JOIN marks M
+WHERE S.rno = M.roll_no;
+
+SELECT * FROM Student S NATURAL JOIN marks M;
+
+
+
+
+
+CREATE DATABASE test10nov;
+
+USE test10nov;
+
+CREATE TABLE EMPLOYEE
+(empid INT PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+dob DATE,
+age INT,
+salary INT DEFAULT (10000),
+CHECK (age > 25));
+
+SELECT age, COUNT(age) FROM EMPLOYEE
+GROUP BY age;
+
+SELECT MAX(name), MIN(name) FORM EMPLOYEE;
+
+SELECT ALL(empid) FROM EMPLOYEE;
+SELECT ALL(dob) FROM EMPLOYEE;
+SELECT DISTINCT(dob) FROM EMPLOYEE;
